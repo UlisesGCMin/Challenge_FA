@@ -22,4 +22,6 @@ Accedemos a la siguiente ruta donde podemos hacer pruebas: **http://127.0.0.1:80
 
 ## Funcionamiento
 
-## Comentarios
+Dentro de la interfaz damos click al método mensajes, seleccionamos el boton de **try** y damos en el botón azul de **execute**.
+
+Los resultados se encuentran en la parte de response.
