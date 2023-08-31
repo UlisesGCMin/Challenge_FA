@@ -36,19 +36,23 @@ def root(msg_input: list[str] = Lista_MSGS):
     """
     # Capturamos la entrada de mensajes
     Lista_MSGS = msg_input
-    
+
     object_to_return = {}
-    object_to_return["entidades"] = []
-    object_to_return["oraciones"] = []
+    values= {}
+    count = 1
 
     for oraciones in  Lista_MSGS:
         elementos = nlp(oraciones)
-        object_to_return["oraciones"].append(oraciones)
+        object_to_return[f"oraciones{count}"] = oraciones
+        fill_val = []
         for entities in elementos.ents:
-            # save_ent = [entities.text, entities.label_]
+            values[f"entidades{count}"] = {}
             value = {entities.text : entities.label_}
-            object_to_return["entidades"].append(value)
+            fill_val.append(value)
+        object_to_return[f"entidades{count}"] = fill_val
+        
+        count += 1
     
-    final_dict = {"resultado": [{"oraciones": object_to_return["oraciones"], "entidades" : object_to_return["entidades"]}]}
+    final_dict = {"resultados" : object_to_return}
 
     return final_dict
