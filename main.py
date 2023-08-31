@@ -49,6 +49,6 @@ def root(msg_input: list[str] = Lista_MSGS):
             value = {entities.text : entities.label_}
             object_to_return["entidades"].append(value)
     
-    final_dict = {"resultado": object_to_return}
+    final_dict = {"resultado": [{"oraciones": object_to_return["oraciones"], "entidades" : object_to_return["entidades"]}]}
 
     return final_dict
